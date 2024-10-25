@@ -1,26 +1,76 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttericon/font_awesome5_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-abstract class SHIcons {
-  static const IconData search = CupertinoIcons.search;
-  static const IconData menu = CupertinoIcons.line_horizontal_3;
-  static const IconData lock = CupertinoIcons.lock_fill;
-  static const IconData home = CupertinoIcons.home;
-  static const IconData settings = CupertinoIcons.settings;
-  static const IconData camera = CupertinoIcons.camera_fill;
-  static const IconData arrowUp = Icons.keyboard_arrow_up;
-  static const IconData fan = FontAwesome5.fan;
-  static const IconData lightBulbOutline = Icons.lightbulb_outline;
-  static const IconData lightBulb = Icons.lightbulb;
-  static const IconData music = Icons.music_note;
-  static const IconData thermostat = Icons.device_thermostat;
-  static const IconData waterDrop = Icons.water_drop_outlined;
-  static const IconData timer = Icons.timer_outlined;
-  static const IconData timerOff = Icons.timer_off_outlined;
-  static const IconData lightMin = Icons.light_mode_outlined;
-  static const IconData lightMax = Icons.light_mode;
-  static const IconData snowFlake = CupertinoIcons.snow;
-  static const IconData wind = CupertinoIcons.wind;
-  static const IconData air = FontAwesome5.air_freshener;
+import 'sh_colors.dart';
+
+abstract class SHTheme {
+  static ThemeData dark = ThemeData(
+    textTheme: TextTheme(
+      bodyLarge: GoogleFonts.gruppo(
+        fontSize: 16,
+        fontWeight: FontWeight.w800,
+        color: SHColors.textColor,
+      ),
+      bodyMedium: GoogleFonts.gruppo(
+        fontSize: 14,
+        fontWeight: FontWeight.w800,
+        color: SHColors.textColor,
+      ),
+      bodySmall: GoogleFonts.montserrat(
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        color: SHColors.textColor,
+      ),
+      displayLarge: GoogleFonts.buda(
+        fontSize: 70,
+        color: SHColors.textColor,
+      ),
+      displayMedium: GoogleFonts.buda(
+        fontSize: 50,
+        color: SHColors.textColor,
+      ),
+      displaySmall: GoogleFonts.buda(
+        fontSize: 40,
+        color: SHColors.textColor,
+      ),
+    ),
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+    ),
+    iconTheme: const IconThemeData(color: SHColors.textColor),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.white,
+        shape: const StadiumBorder(),
+        textStyle: GoogleFonts.montserrat(
+          fontSize: 12,
+          fontWeight: FontWeight.w800,
+        ),
+      ),
+    ),
+    sliderTheme: const SliderThemeData(
+      activeTrackColor: SHColors.selectedColor,
+      inactiveTrackColor: SHColors.trackColor,
+      thumbColor: SHColors.selectedColor,
+      trackHeight: 2,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      selectedIconTheme: const IconThemeData(size: 40),
+      unselectedIconTheme: const IconThemeData(size: 40),
+      selectedItemColor: SHColors.hintColor,
+      unselectedItemColor: SHColors.hintColor,
+      selectedLabelStyle: GoogleFonts.montserrat(
+        fontSize: 12,
+        fontWeight: FontWeight.w700,
+      ),
+      unselectedLabelStyle: GoogleFonts.montserrat(
+        fontSize: 12,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
+    scaffoldBackgroundColor: SHColors.backgroundColor,
+  );
 }
