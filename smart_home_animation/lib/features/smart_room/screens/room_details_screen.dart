@@ -6,7 +6,7 @@ import 'package:smart_home_animation/core/shared/presentation/widgets/parallax_i
 import 'package:smart_home_animation/core/shared/presentation/widgets/sh_app_bar.dart';
 import 'package:ui_common/ui_common.dart';
 
-import '../widgets/room_details_page_view.dart';
+import '../../widgets/room_details_page_view.dart';
 
 class RoomDetailScreen extends StatelessWidget {
   const RoomDetailScreen({
